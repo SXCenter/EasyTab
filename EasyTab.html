@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<head>
+    <title>EasyTab新标签页</title>
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>📖</text></svg>">
+	<link rel="stylesheet" href="css/main.css">
+    <script src="https://kit.fontawesome.com/04fc4e786e.js" crossorigin="anonymous"></script>
+    <script src="https://upcdn.b0.upaiyun.com/libs/jquery/jquery-2.0.3.min.js"></script>
+    
+</head>
+<div class="bg">
+    <img src="https://api.oneneko.com/v1/bing_today" alt="bing">
+    <body>
+        <h1 style="font-size: 72px;"><span id="time"></span></h1>
+    </body>
+    <h2 id="date"></h2>
+    <iframe scrolling="no" src="https://tianqiapi.com/api.php?style=ta&skin=baidu" frameborder="0" width="185" height="30" allowtransparency="true"></iframe>
+    <p>&nbsp;<a href="https://wenwebs.github.io/">冥王星<i class="fa-solid fa-up-right-from-square"></i></a>&nbsp;@&nbsp;<a href="https://space.bilibili.com/568343776/">Studio<i class="fa-solid fa-up-right-from-square"></i></a>&nbsp;|&nbsp;2022 随便写写，仅作练习&nbsp;</p>
+</div>
+
+
+
+
+
+<div class="shell">
+    
+    <input type="text" placeholder="Search" id="search">
+    <a onclick="Search()">
+        <i class="fa fa-search" style="color: #555;"></i>
+    </a>
+    <div class="shell-engine">
+        <ul>
+            <li><input type="radio" value="baidu" name="engine" checked="checked" id="baidu"/><label for="baidu">百度</label></li>
+            <li><input type="radio" value="bing" name="engine" id="bing"/><label for="bing">必应</label></li>
+            <li><input type="radio" value="fsou" name="engine" id="fsou"/><label for="fsou">F搜</label></li>
+        </ul>
+        
+    </div>
+</div>
+
+
+
+
+<script>
+
+
+function time() {
+				var vWeek, vWeek_s, vDay;
+				vWeek = ["星期天", "星期一", "星期二", "星期三", "星期四", "星期五", "星期六"];
+				var date =  new Date();
+				year = date.getFullYear();
+				month = date.getMonth() + 1;
+				day = date.getDate();
+				hours = date.getHours();
+				minutes = date.getMinutes();
+				vWeek_s = date.getDay();
+				document.getElementById("time").innerHTML = "\t" + hours + ":" + minutes;
+                document.getElementById("date").innerHTML = year + "年" + month + "月" + day + "日" + "\t" + vWeek[vWeek_s];
+ 
+			};
+			setInterval("time()", 1000);
+
+
+function Search(){
+    var bing = 'https://cn.bing.com/search?q='
+    var baidu = 'https://www.baidu.com/s?wd='
+    var fsou = 'https://fsoufsou.com/search?q='
+    var engine = $("input[name='engine']:checked").attr("value");
+
+    var content = document.getElementById("search");
+    if(engine == 'baidu'){
+        window.open(baidu + content.value);
+    }else if(engine == 'bing'){
+        window.open(bing + content.value);
+    }else if(engine =='fsou'){
+        window.open(fsou + content.value);
+    }
+    
+}
+
+document.onkeydown=function()              //网页内按下回车触发
+{
+        if(event.keyCode==13)
+        {
+            Search()                            
+        }
+}
+</script>
