@@ -2,7 +2,9 @@
     font-family: MiSans;
     src: url(..\font\MiSans-Regular.ttf);
 }
-
+:root{
+    --font-color: #fff
+}
 
 .bg img{
     width: 110%;
@@ -220,7 +222,7 @@ body {
 
 
 .bg span{
-    color: #555;
+    color: var(--font-color);
     font-size: 72;
     z-index: 998;
     position: fixed;
@@ -232,7 +234,7 @@ body {
 
 
 .bg h2 {
-    color: #555;
+    color: var(--font-color);
     font-size: 48;
     position: fixed;
     top:15%;
