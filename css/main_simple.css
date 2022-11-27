@@ -242,10 +242,15 @@ body {
     font-family: MiSans;
     position: fixed;
     top:20%;
-    left: calc(50% - 92.5px);
+    left: calc(50% - 110px);
     z-index: 99999;
     display: block;
     transition: all 0.3s ease;
+}
+.bg iframe::before{
+    background-color: #ffffff40;
+    box-shadow: 0 5px 7.5px #00000050;
+    border-radius: 20px;
 }
 
 
@@ -265,7 +270,7 @@ body {
     color: #fff;
     position: fixed;
     bottom: 1%;
-    left: calc(50% - 187px);
+    left: calc(50% - 200px);
     z-index: 99999;
     display: block;
     transition: all 0.3s ease;

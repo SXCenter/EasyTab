@@ -247,7 +247,7 @@ body {
     font-family: MiSans;
     position: fixed;
     top:20%;
-    left: calc(50% - 92.5px);
+    left: calc(50% - 110px);
     z-index: 99999;
     display: block;
     transition: all 0.3s ease;
@@ -270,7 +270,7 @@ body {
     color: #fff;
     position: fixed;
     bottom: 1%;
-    left: calc(50% - 187px);
+    left: calc(50% - 200px);
     z-index: 99999;
     display: block;
     transition: all 0.3s ease;
